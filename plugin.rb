@@ -4,9 +4,11 @@
 
 after_initialize do
 
-  # only show ***@roblox.com in admin list
   add_to_serializer(:about, :admins) do
-    object.admins.reject { |u| u.email == /@roblox\.com/i }
+    admin_list_filter_suffix = SiteSetting.admin_list_filter_suffix
+    
+    # hide emails that do not match setting value (will do nothing if setting == '')
+    object.admins.select { |u| u.email.match(/#{Regexp.escape(admin_list_filter_suffix)}/i) }
   end
 
 end
