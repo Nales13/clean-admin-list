@@ -1,0 +1,3 @@
+en:
+  site_settings:
+      admin_list_filter_suffix: "Filter emails from Admins on About page that match this suffix"
