@@ -4,9 +4,9 @@
 
 after_initialize do
 
-  # hide ***@softserveinc.com users from admin list
+  # only show ***@roblox.com in admin list
   add_to_serializer(:about, :admins) do
-    object.admins.reject { |u| u.email =~ /@softserveinc\.com/i }
+    object.admins.reject { |u| u.email == /@roblox\.com/i }
   end
 
 end
