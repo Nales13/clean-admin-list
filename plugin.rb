@@ -14,12 +14,12 @@ after_initialize do
   letters_shown = 1;
   
   add_to_serializer(:user, :email) do
-    idx = email.index('@');
+    idx = object.email.index('@');
     if (idx)
-      prefix = email[0, idx];
-      prefix[0, letters_shown] + ('*' * (idx < letters_shown ? 0 : idx - letters_shown)) + email[idx, email.length]
+      prefix = object.email[0, idx];
+      prefix[0, letters_shown] + ('*' * (idx < letters_shown ? 0 : idx - letters_shown)) + object.email[idx, object.email.length]
     else
-      ('*') * email.length
+      ('*') * object.email.length
     end
   end
 
