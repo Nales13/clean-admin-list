@@ -11,8 +11,16 @@ after_initialize do
     object.admins.select { |u| u.email.match(/#{Regexp.escape(admin_list_filter_suffix)}/i) }
   end
   
+  letters_shown = 1;
+  
   add_to_serializer(:user, :email) do
-    object.email + " TEST"
+    idx = email.index('@');
+    if (idx)
+      prefix = email[0, idx];
+      prefix[0, letters_shown] + ('*' * (idx < letters_shown ? 0 : idx - letters_shown)) + email[idx, email.length]
+    else
+      ('*') * email.length
+    end
   end
 
 end
