@@ -12,7 +12,7 @@ after_initialize do
   end
   
   add_to_serializer(:user, :email) do
-    email + " TEST"
+    object.email + " TEST"
   end
 
 end
