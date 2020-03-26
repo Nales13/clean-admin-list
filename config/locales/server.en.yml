@@ -1,4 +1,3 @@
 en:
   site_settings:
-      clean_admin_list_enabled: "Hide staff from About page based on email address"
-      clean_admin_list_suffix: "Suffix that primary email of staff needs to match (i.e. '@domain.com')"
+      clean_admin_list_suffix: "Hide staff from About page with emails that do not match this suffix (i.e. '@domain.com' to only show staff accounts on that email domain)"
