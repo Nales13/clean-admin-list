@@ -7,7 +7,7 @@ after_initialize do
   # hide emails that do not match setting value (will do nothing if setting == '')
   def filter_staff(users)
     users.select { |u|
-      u.email.match(/#{Regexp.escape(SiteSetting.admin_list_filter_suffix)}/i)
+      u.email.match(/#{Regexp.escape(SiteSetting.clean_admin_list_suffix)}/i)
     }
   end
 
