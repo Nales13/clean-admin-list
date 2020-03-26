@@ -44,4 +44,4 @@ This is done by adding a custom serializer to the About page that acts on the :a
 
 ## Configuration
 
-The setting `admin_list_filter_suffix` should be set to the domain of which users should be shown on the About page only, i.e. `@domain.com`.
+The setting `clean_admin_list_suffix` should be set to the domain of which users should be shown on the About page only, i.e. `@domain.com`.
